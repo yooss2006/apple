@@ -1,15 +1,11 @@
 import React from "react";
 import { NAV_MENU } from "../../schemas";
-import NavCart from "../atoms/NavCart";
-import NavLink from "../atoms/NavLink";
-import NavSearch from "../atoms/NavSearch";
 import styled from "styled-components";
 
-const NavListStyle = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
+import NavLink from "../atoms/NavLink";
+import NavBtn from "../atoms/NavBtn";
+import { AiOutlineSearch } from "react-icons/ai";
+
 const NavList = () => {
   return (
     <NavListStyle>
@@ -19,13 +15,20 @@ const NavList = () => {
         </li>
       ))}
       <li>
-        <NavSearch />
-      </li>
-      <li>
-        <NavCart />
+        <NavBtn icon={<AiOutlineSearch />} />
       </li>
     </NavListStyle>
   );
 };
+
+const NavListStyle = styled.ul`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1.5rem;
+  li {
+    height: 100%;
+  }
+`;
 
 export default NavList;

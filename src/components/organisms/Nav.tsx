@@ -1,19 +1,46 @@
 import React from "react";
-import NavList from "../moecules/NavList";
+import { RiHandbagLine } from "react-icons/ri";
 import styled from "styled-components";
 
-const NavStyle = styled.nav`
-  flex-basis: 900px;
-  a {
-    padding 1rem 1rem;
-  }
-`;
+import HoverHamberger from "../atoms/HoverHamburger";
+import NavBtn from "../atoms/NavBtn";
+import NavList from "../moecules/NavList";
+
 const Nav = () => {
   return (
     <NavStyle>
-      <NavList />
+      <ul className="navList">
+        <li>
+          <HoverHamberger />
+        </li>
+        <li className="middleList">
+          <NavList />
+        </li>
+        <li>
+          <NavBtn icon={<RiHandbagLine />} />
+        </li>
+      </ul>
     </NavStyle>
   );
 };
 
+const NavStyle = styled.nav`
+  flex: 1;
+  a {
+    padding: 1rem 1rem;
+  }
+  .navList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .middleList {
+    flex: 1;
+  }
+  @media (max-width: 833px) {
+    .middleList {
+      display: none;
+    }
+  }
+`;
 export default Nav;
