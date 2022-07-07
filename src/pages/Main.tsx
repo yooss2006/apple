@@ -1,12 +1,6 @@
 import React from "react";
-import Search from "../components/atoms/input/Search";
-
 const Main = () => {
-  return (
-    <div>
-      <Search />
-    </div>
-  );
+  return <div>zz</div>;
 };
 
 export default Main;

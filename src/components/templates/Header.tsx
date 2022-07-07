@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import Nav from "./Nav";
+import Nav from "../organisms/Nav";
 import { AiFillApple } from "react-icons/ai";
 
+export const isMenuContext = React.createContext<{
+  isMenuOn: boolean;
+  handleMenu: () => void;
+} | null>(null);
+
 const Header = () => {
+  const [isMobileMenuOn, setIsMobileMenuOn] = useState(false);
+  const mobileMenu = {
+    isMenuOn: isMobileMenuOn,
+    handleMenu: () => {
+      setIsMobileMenuOn((prev) => !prev);
+    },
+  };
   return (
     <HeaderStyle>
       <div className="container">
@@ -14,7 +26,9 @@ const Header = () => {
             <AiFillApple />
           </Link>
         </h1>
-        <Nav />
+        <isMenuContext.Provider value={mobileMenu}>
+          <Nav />
+        </isMenuContext.Provider>
       </div>
     </HeaderStyle>
   );

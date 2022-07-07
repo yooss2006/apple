@@ -29,6 +29,11 @@ const NavListStyle = styled.ul`
   li {
     height: 100%;
   }
+  @media (max-width: 833px) {
+    display: block;
+    position: fixed;
+    top: 0;
+  }
 `;
 
 export default NavList;

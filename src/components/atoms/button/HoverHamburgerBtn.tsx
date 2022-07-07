@@ -1,19 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
+import { isMenuContext } from "../../templates/Header";
 
 const HoverHambergerBtn = () => {
-  const [onHiddenMenu, setOnHiddenMenu] = useState(false);
-  const handleHiddenMenu = () => {
-    setOnHiddenMenu((prev) => !prev);
-  };
+  const context = useContext(isMenuContext);
   return (
-    <HamburgerStyle type="button" onClick={handleHiddenMenu}>
-      <p className="blind">{onHiddenMenu ? "닫기" : "목록"}</p>
+    <HamburgerStyle type="button" onClick={context?.handleMenu}>
+      <p className="blind">{context?.isMenuOn ? "닫기" : "목록"}</p>
       <div
-        className={["line", "top", onHiddenMenu ? "on" : ""].join(" ")}
+        className={["line", "top", context?.isMenuOn ? "on" : ""].join(" ")}
       ></div>
       <div
-        className={["line", "buttom", onHiddenMenu ? "on" : ""].join(" ")}
+        className={["line", "buttom", context?.isMenuOn ? "on" : ""].join(" ")}
       ></div>
     </HamburgerStyle>
   );
