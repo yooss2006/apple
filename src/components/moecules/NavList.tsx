@@ -3,7 +3,7 @@ import { NAV_MENU } from "../../schemas";
 import styled from "styled-components";
 
 import NavLink from "../atoms/NavLink";
-import NavBtn from "../atoms/NavBtn";
+import NavBtn from "../atoms/button/NavBtn";
 import { AiOutlineSearch } from "react-icons/ai";
 
 const NavList = () => {

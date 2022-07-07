@@ -2,8 +2,8 @@ import React from "react";
 import { RiHandbagLine } from "react-icons/ri";
 import styled from "styled-components";
 
-import HoverHamberger from "../atoms/HoverHamburger";
-import NavBtn from "../atoms/NavBtn";
+import HoverHamberger from "../atoms/button/HoverHamburgerBtn";
+import NavBtn from "../atoms/button/NavBtn";
 import NavList from "../moecules/NavList";
 
 const Nav = () => {

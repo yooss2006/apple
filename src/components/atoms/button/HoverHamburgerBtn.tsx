@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const HoverHamberger = () => {
+const HoverHambergerBtn = () => {
   const [onHiddenMenu, setOnHiddenMenu] = useState(false);
   const handleHiddenMenu = () => {
     setOnHiddenMenu((prev) => !prev);
@@ -60,4 +60,4 @@ const HamburgerStyle = styled.button`
   }
 `;
 
-export default HoverHamberger;
+export default HoverHambergerBtn;
